@@ -1,31 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Model Viewer</title>
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <title>3D Model AR Viewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
         model-viewer {
-            width: 80%;
-            height: 80%;
+            width: 100%;
+            height: 600px;
+            background-color: #f5f5f5;
         }
     </style>
 </head>
 <body>
-    <model-viewer src="./nobel%20chair.glb" 
-                  alt="A 3D model of a chair" 
-                  auto-rotate 
-                  camera-controls 
-                  ar>
+    <model-viewer
+        src="noble-chair.glb"
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        camera-controls
+        auto-rotate
+        ios-src="noble-chair.usdz">
     </model-viewer>
 </body>
 </html>
